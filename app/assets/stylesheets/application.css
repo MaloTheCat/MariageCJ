@@ -23,13 +23,16 @@ h1 {
 
 h2 {
   font-family: "Stringfellows";
-  /*font-family: 'Dancing Script', cursive;*/
   font-size: 7em;
   letter-spacing: .05em;
 }
 
 h3 {
   font-size : 6em;
+}
+
+#days {
+  display: inline-block;
 }
 
 .background-img {
@@ -152,4 +155,16 @@ footer > p {
   font-size: 1em;
   color: #666666;
   opacity: .4;
+}
+
+@media only screen and (max-width: 780px) {
+  h1 {
+    text-align: center;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 5em;
+    letter-spacing: .05em;
+  }
 }
