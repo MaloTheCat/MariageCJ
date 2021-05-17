@@ -91,11 +91,9 @@ p {
 
 /*---- Section 3 ----*/
 #section3 {
-  border: 2px solid gray;
 }
 
 .container-grid {
-  border: 2px solid red;
   /*display: grid;*/
   /*grid-template-columns: auto 100px 100px 100px;*/
   /*grid-template-rows: repeat(5, 50px);*/
