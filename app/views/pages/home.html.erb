@@ -45,148 +45,164 @@
   </div>
 </div>
 <div id="section3">
-    <ul class="container-grid">
-<!-- <div class="items">
-        <div class="header-grid-1">
-        </div>
-        <div class="header-grid-2">
-          Montant <strong>Initial</strong>
-        </div>
-        <div class="header-grid-3">
-          Montant <strong>Restant</strong>
-        </div>
-        <div class="header-grid-4">
-          Votre <strong>Participation</strong>
-        </div>
-      </div> -->
+  <ul class="container-grid">
+    <div class="items" style="background-color: white;">
+      <div class="header-grid-1"></div>
+      <div class="header-grid-2">
+        Montant <strong>Initial</strong>
+      </div>
+      <div class="header-grid-3">
+        Montant <strong>Restant</strong>
+      </div>
+      <div class="header-grid-4">
+        Votre <strong>Participation</strong>
+      </div>
+    </div>
 
-      <div class="items">
+    <a href="*" id="myBtn">
+      <!-- <button id="myBtn">Open Modal</button> -->
+      <div class="items amount">
         <li>Billet d’avion pour Mme</li>
         <li>800€</li>
         <li>800€</li>
         <li>-</li>
       </div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="foo">
+            <label for="bar">Montant</label>
+            <input id="bar" name="bar" type="text" value="" />
+            <input type="submit" value="Ajouter" />
+          </form>
+        </div>
+      </div>
+    </a>
+    <!-- </a> -->
+    <a href="">
       <div class="items">
         <li>Billet d’avion pour Mr</li>
         <li>800€</li>
         <li>800€</li>
         <li>-</li>
       </div>
-      <div class="items">
-        <li>La Petite Lorraine (avant départ)</li>
-        <li>15€</li>
-        <li>15€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Hébergement pour 2</li>
-        <li>700€</li>
-        <li>700€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Repas Pignon Nouvelle Vague</li>
-        <li>90€</li>
-        <li>90€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Crème solaire</li>
-        <li>10€</li>
-        <li>10€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>5 sur 5 Tropiques</li>
-        <li>15€</li>
-        <li>15€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Poulet Boucané</li>
-        <li>20€</li>
-        <li>20€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Plongée snorkling tortue</li>
-        <li>60€</li>
-        <li>60€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Baptème de plongée</li>
-        <li>50€</li>
-        <li>50€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Jardin de Balata</li>
-        <li>30€</li>
-        <li>30€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Visite de la rhumerie Maison Clément</li>
-        <li>30€</li>
-        <li>30€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Cubi de Rhum (Duty Free)</li>
-        <li>30€</li>
-        <li>30€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Lot de 2 serviette de plage</li>
-        <li>40€</li>
-        <li>40€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Visite du Musée de la Banane</li>
-        <li>20€</li>
-        <li>20€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>GoPro pour prendre en photo les tortues</li>
-        <li>300€</li>
-        <li>300€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Un bijou souvenir pour Mme</li>
-        <li>10€</li>
-        <li>10€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Un bijou souvenir pour Mr</li>
-        <li>10€</li>
-        <li>10€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Parfum des îles sur mesure</li>
-        <li>60€</li>
-        <li>60€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Location de voiture</li>
-        <li>650€</li>
-        <li>650€</li>
-        <li>-</li>
-      </div>
-      <div class="items">
-        <li>Participation libre</li>
-        <li>-</li>
-        <li>-</li>
-        <li>-</li>
-      </div>
-    </ul>
+    </a>
+    <div class="items">
+      <li>La Petite Lorraine (avant départ)</li>
+      <li>15€</li>
+      <li>15€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Hébergement pour 2</li>
+      <li>700€</li>
+      <li>700€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Repas Pignon Nouvelle Vague</li>
+      <li>90€</li>
+      <li>90€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Crème solaire</li>
+      <li>10€</li>
+      <li>10€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>5 sur 5 Tropiques</li>
+      <li>15€</li>
+      <li>15€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Poulet Boucané</li>
+      <li>20€</li>
+      <li>20€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Plongée snorkling tortue</li>
+      <li>60€</li>
+      <li>60€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Baptème de plongée</li>
+      <li>50€</li>
+      <li>50€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Jardin de Balata</li>
+      <li>30€</li>
+      <li>30€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Visite de la rhumerie Maison Clément</li>
+      <li>30€</li>
+      <li>30€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Cubi de Rhum (Duty Free)</li>
+      <li>30€</li>
+      <li>30€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Lot de 2 serviette de plage</li>
+      <li>40€</li>
+      <li>40€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Visite du Musée de la Banane</li>
+      <li>20€</li>
+      <li>20€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>GoPro pour prendre en photo les tortues</li>
+      <li>300€</li>
+      <li>300€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Un bijou souvenir pour Mme</li>
+      <li>10€</li>
+      <li>10€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Un bijou souvenir pour Mr</li>
+      <li>10€</li>
+      <li>10€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Parfum des îles sur mesure</li>
+      <li>60€</li>
+      <li>60€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Location de voiture</li>
+      <li>650€</li>
+      <li>650€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Participation libre</li>
+      <li>-</li>
+      <li>-</li>
+      <li>-</li>
+    </div>
+  </ul>
 </div>
 
 <footer>

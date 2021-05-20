@@ -3,10 +3,13 @@
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 li {
   list-style: none;
 }
-
 
 h1, h2, h3 {
   padding: 50px;
@@ -36,7 +39,7 @@ h3 {
 }
 
 .background-img {
-  background-image: url("background.jpg");ground.jpg");*/
+  background-image: url("background.jpg");
   background-repeat: no-repeat;
   height: 100vh;
   background-size: cover;
@@ -100,7 +103,7 @@ p {
 }
 
 .header-grid-2, .header-grid-3, .header-grid-4 {
-  border: 2px solid black;
+  border-left: 2px solid #C0C0C0;
   text-align: center;
   align-content: center;
   margin: auto;
@@ -154,6 +157,8 @@ footer > p {
   color: #666666;
   opacity: .4;
 }
+
+/*---- Media Queries ----*/
 
 @media only screen and (max-width: 780px) {
   h1 {
