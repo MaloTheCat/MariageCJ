@@ -1,1 +1,219 @@
-<h1>Coucou</h1>
+<!-- <div class="container-header"> -->
+  <div class="background-img">
+    <div class="container-title">
+      <h1>Liste de Mariage</h1>
+      <h2>Cindy&ensp;& Jérémie</h2>
+      <h3>J - <div id="days"></div><div id="end"></div></h3>
+    </div>
+  </div>
+<!-- </div> -->
+<div id="section2">
+  <img src="assets/hero-banner.png" alt="Mariage Hero Banner">
+    <div class="container-core">
+      <p>La tradition des mariages invite à partager une liste de mariage.
+      Depuis 10 ans que nous sommes ensemble, nous avons su nous équiper de sorte à créer notre petit cocon.
+      Cependant nos choix de vie ont fait que nous avons peu voyagé en amoureux.
+      A ce titre nous souhaitons effectuer notre voyage de noces en Martinique.</p>
+      <img src="assets/diamant-martinique.jpg" alt="Rocher du Diamant Martinique">
+      <p>Ainsi nous réalisons cette liste de mariage autour de cet évènement que nous planifions en février 2022.
+      </br></br>
+      A travers ce site internet vous allez pouvoir contribuer à notre voyage de noces en vous positionnant sur différents cadeaux.
+      Vous pouvez soit vous engager sur un montant en vue de le mettre dans l’urne
+      (espèce, chèque, mais ne mettez pas un bras car l’urne est trop petite),
+      soit en effectuant directement le paiement en ligne via votre compte paypal.</p>
+      <img src="assets/arrow.png" alt="Arrow separation">
+      <p>Si vous avez gagné au loto, à un jeu à gratter, ou que vous venez d’avoir une augmentation,
+      vous pouvez vous positionner sur l’intégralité d’un cadeau (faites vous plaisir, nous sommes preneurs).
+      </br></br>
+      Vous pouvez également vous positionner sur une partie d’un ou de plusieurs cadeaux.
+      Une fois validé, le montant restant apparaitra pour les autres personnes se connectant.
+      </br></br>
+      Enfin une dernière possibilité est la participation libre. Vous verrez c’est tout en bas.
+      Cette participation correspond à une cagnotte qui pourra compléter des cadeaux qui n’ont pas atteint le montant à 100%,
+      ou bien nous permettre de faire d’autres activités une fois en Martinique.
+      </br></br>
+      Pour vous encourager à nous faire plaisir, voici notre but :</p>
+      <div class="container-square">
+        <img src="assets/plongee-tortue.jpg" alt="Plongée tortue Martinique">
+        <img src="assets/restaurant.jpg" alt="Restaurant Martinique">
+        <img src="assets/rocher-diamant.jpg" alt="Rocher du Diamant Martinique">
+        <img src="assets/salines.jpg" alt="Plage les Salines Martinique">
+      </div>
+      <p>Sélectionnez la ou les lignes auxquels vous souhaitez participer :</p>
+      <img src="assets/alliances.png" alt="Alliances C&J">
+    </div>
+  </div>
+</div>
+<div id="section3">
+
+
+  <ul class="container-grid">
+    <div class="items" style="background-color: white;">
+      <div class="header-grid-1"></div>
+      <div class="header-grid-2">
+        Montant <strong>Initial</strong>
+      </div>
+      <div class="header-grid-3">
+        Montant <strong>Restant</strong>
+      </div>
+      <div class="header-grid-4">
+        Votre <strong>Participation</strong>
+      </div>
+    </div>
+
+    <% @result.each_with_index do |line, index| %>
+      <!-- Modal -->
+      <button id="myBtn">Open Modal</button>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="foo">
+            <label for="bar">Montant</label>
+            <input id="bar" name="bar" type="text" value="" />
+            <input type="submit" value="Ajouter" />
+          </form>
+        </div>
+      </div>
+      <!-- Modal -->
+      <% if index.odd? %>
+        <!-- <a href=""> -->
+          <div class="items bck-pink">
+            <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
+            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+            <li>-</li>
+          </div>
+        <!-- </a> -->
+      <% else %>
+        <!-- <a href=""> -->
+          <div class="items bck-green">
+            <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
+            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+            <li>-</li>
+          </div>
+        <!-- </a> -->
+      <% end %>
+    <% end %>
+
+
+    <!-- <div class="items">
+      <li>La Petite Lorraine (avant départ)</li>
+      <li>15€</li>
+      <li>15€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Hébergement pour 2</li>
+      <li>700€</li>
+      <li>700€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Repas Pignon Nouvelle Vague</li>
+      <li>90€</li>
+      <li>90€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Crème solaire</li>
+      <li>10€</li>
+      <li>10€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>5 sur 5 Tropiques</li>
+      <li>15€</li>
+      <li>15€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Poulet Boucané</li>
+      <li>20€</li>
+      <li>20€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Plongée snorkling tortue</li>
+      <li>60€</li>
+      <li>60€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Baptème de plongée</li>
+      <li>50€</li>
+      <li>50€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Jardin de Balata</li>
+      <li>30€</li>
+      <li>30€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Visite de la rhumerie Maison Clément</li>
+      <li>30€</li>
+      <li>30€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Cubi de Rhum (Duty Free)</li>
+      <li>30€</li>
+      <li>30€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Lot de 2 serviette de plage</li>
+      <li>40€</li>
+      <li>40€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Visite du Musée de la Banane</li>
+      <li>20€</li>
+      <li>20€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>GoPro pour prendre en photo les tortues</li>
+      <li>300€</li>
+      <li>300€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Un bijou souvenir pour Mme</li>
+      <li>10€</li>
+      <li>10€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Un bijou souvenir pour Mr</li>
+      <li>10€</li>
+      <li>10€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Parfum des îles sur mesure</li>
+      <li>60€</li>
+      <li>60€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Location de voiture</li>
+      <li>650€</li>
+      <li>650€</li>
+      <li>-</li>
+    </div>
+    <div class="items">
+      <li>Participation libre</li>
+      <li>-</li>
+      <li>-</li>
+      <li>-</li>
+    </div> -->
+  </ul>
+</div>
+
+<footer>
+  <p>Réalisation unique pour la célébration de Cindy & Jérémie // Jonathan V. // 2021</p>
+</footer>
