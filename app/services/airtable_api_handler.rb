@@ -10,7 +10,7 @@ class AirtableApiHandler
     https.use_ssl = true
 
     request = Net::HTTP::Get.new(url)
-    request["Authorization"] = "Bearer key1bjpizahHwm1vJ"
+    request["Authorization"] = ENV['API_AIRTABLE']
     request["Cookie"] = "brw=brwbfYTmJqaGnv7ZD"
 
     response = https.request(request)
