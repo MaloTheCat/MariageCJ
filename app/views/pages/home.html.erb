@@ -61,15 +61,9 @@
       </div>
     </div>
 
-    <a href="" id="myBtn">
-      <!-- <button id="myBtn">Open Modal</button> -->
-      <div class="items amount">
-        <li>Billet d’avion pour Mme</li>
-        <li>800€</li>
-        <li>800€</li>
-        <li>-</li>
-      </div>
-
+    <% @result.each_with_index do |line, index| %>
+      <!-- Modal -->
+      <button id="myBtn">Open Modal</button>
       <div id="myModal" class="modal">
         <div class="modal-content">
           <span class="close">&times;</span>
@@ -80,17 +74,30 @@
           </form>
         </div>
       </div>
-    </a>
-    <!-- </a> -->
-    <a href="">
-      <div class="items">
-        <li>Billet d’avion pour Mr</li>
-        <li>800€</li>
-        <li>800€</li>
-        <li>-</li>
-      </div>
-    </a>
-    <div class="items">
+      <!-- Modal -->
+      <% if index.odd? %>
+        <!-- <a href=""> -->
+          <div class="items bck-pink">
+            <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
+            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+            <li>-</li>
+          </div>
+        <!-- </a> -->
+      <% else %>
+        <!-- <a href=""> -->
+          <div class="items bck-green">
+            <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
+            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+            <li>-</li>
+          </div>
+        <!-- </a> -->
+      <% end %>
+    <% end %>
+
+
+    <!-- <div class="items">
       <li>La Petite Lorraine (avant départ)</li>
       <li>15€</li>
       <li>15€</li>
@@ -203,7 +210,7 @@
       <li>-</li>
       <li>-</li>
       <li>-</li>
-    </div>
+    </div> -->
   </ul>
 </div>
 
