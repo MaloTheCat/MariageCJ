@@ -62,155 +62,41 @@
     </div>
 
     <% @result.each_with_index do |line, index| %>
-      <!-- Modal -->
-      <button id="myBtn">Open Modal</button>
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <form id="foo">
-            <label for="bar">Montant</label>
-            <input id="bar" name="bar" type="text" value="" />
-            <input type="submit" value="Ajouter" />
-          </form>
+
+      <a href="" id="link">
+        <% if index.odd? %>
+            <div class="items bck-pink">
+              <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
+              <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+              <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+              <li>-</li>
+            </div>
+        <% else %>
+          <!-- <a href="" id=myBtn> -->
+            <div class="items bck-green">
+              <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
+              <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+              <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
+              <li>-</li>
+            </div>
+        <% end %>
+
+        <!-- Modal -->
+        <!-- <button id="myBtn">Open Modal</button> -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <%= form_with method: :get do |form| %>
+              <%= form.label :price, "Montant" %>
+              <%= form.number_field :price %>
+              <%= form.submit "Ajouter", id: "prevent-reloading"%>
+            <% end %>
+          </div>
         </div>
-      </div>
-      <!-- Modal -->
-      <% if index.odd? %>
-        <!-- <a href=""> -->
-          <div class="items bck-pink">
-            <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
-            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
-            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
-            <li>-</li>
-          </div>
-        <!-- </a> -->
-      <% else %>
-        <!-- <a href=""> -->
-          <div class="items bck-green">
-            <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
-            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
-            <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
-            <li>-</li>
-          </div>
-        <!-- </a> -->
-      <% end %>
+        <!-- Modal -->
+        <%# render 'shared/modal' %>
+      </a>
     <% end %>
-
-
-    <!-- <div class="items">
-      <li>La Petite Lorraine (avant départ)</li>
-      <li>15€</li>
-      <li>15€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Hébergement pour 2</li>
-      <li>700€</li>
-      <li>700€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Repas Pignon Nouvelle Vague</li>
-      <li>90€</li>
-      <li>90€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Crème solaire</li>
-      <li>10€</li>
-      <li>10€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>5 sur 5 Tropiques</li>
-      <li>15€</li>
-      <li>15€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Poulet Boucané</li>
-      <li>20€</li>
-      <li>20€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Plongée snorkling tortue</li>
-      <li>60€</li>
-      <li>60€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Baptème de plongée</li>
-      <li>50€</li>
-      <li>50€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Jardin de Balata</li>
-      <li>30€</li>
-      <li>30€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Visite de la rhumerie Maison Clément</li>
-      <li>30€</li>
-      <li>30€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Cubi de Rhum (Duty Free)</li>
-      <li>30€</li>
-      <li>30€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Lot de 2 serviette de plage</li>
-      <li>40€</li>
-      <li>40€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Visite du Musée de la Banane</li>
-      <li>20€</li>
-      <li>20€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>GoPro pour prendre en photo les tortues</li>
-      <li>300€</li>
-      <li>300€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Un bijou souvenir pour Mme</li>
-      <li>10€</li>
-      <li>10€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Un bijou souvenir pour Mr</li>
-      <li>10€</li>
-      <li>10€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Parfum des îles sur mesure</li>
-      <li>60€</li>
-      <li>60€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Location de voiture</li>
-      <li>650€</li>
-      <li>650€</li>
-      <li>-</li>
-    </div>
-    <div class="items">
-      <li>Participation libre</li>
-      <li>-</li>
-      <li>-</li>
-      <li>-</li>
-    </div> -->
   </ul>
 </div>
 

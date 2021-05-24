@@ -9,10 +9,8 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import { initCountdown } from '../controllers/countdown';
-// import { initModal } from '../controllers/modal';
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 initCountdown();
-// initModal();
