@@ -1,0 +1,12 @@
+<!-- <button id="myBtn">Open Modal</button> -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <%= form_with method: :get do |form| %>
+        <%= form.label :price, "Montant" %>
+        <%= form.number_field :price %>
+        <%= form.submit "Ajouter", id: "prevent-reloading"%>
+      <% end %>
+    </div>
+  </div>
+<!-- Modal -->

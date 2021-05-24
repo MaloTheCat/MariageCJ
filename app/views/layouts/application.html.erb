@@ -15,20 +15,51 @@
   <body>
     <%= yield %>
     <script>
-      var modal = document.getElementById("myModal");
-      var btn = document.getElementById("myBtn");
-      var span = document.getElementsByClassName("close")[0];
-      btn.onclick = function() {
+      const link = document.getElementById("link");
+      const modal = document.getElementById("myModal");
+      const span = document.getElementsByClassName("close")[0];
+
+      const popModal = (e) => {
+        e.preventDefault();
         modal.style.display = "block";
       }
-      span.onclick = function() {
+
+      const outModal = (e) => {
+        e.preventDefault();
         modal.style.display = "none";
-      }
-      window.onclick = function(event) {
         if (event.target == modal) {
           modal.style.display = "none";
         }
       }
+
+      const initModal = () => {
+        if (link) {
+          link.addEventListener('click', popModal);
+        }
+        if (span) {
+          modal.addEventListener('click', outModal);
+        }
+      }
+
+      // link.onclick = function() {
+      //   modal.style.display = "block";
+      // }
+      // span.onclick = function() {
+      //   modal.style.display = "none";
+      // }
+      // window.onclick = function(event) {
+      //   if (event.target == modal) {
+      //     modal.style.display = "none";
+      //   }
+      // }
+
+      // $('#prevent-reloading').submit(function (e) {
+      //   e.preventDefault();
+      // });
+      // $('#prevent-reloading').click(function (e) {
+      //   e.preventDefault();
+      // });
+
     </script>
   </body>
 </html>
