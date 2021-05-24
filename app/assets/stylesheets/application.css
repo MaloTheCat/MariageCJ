@@ -100,7 +100,8 @@ p {
 #section3 {
 }
 
-a:hover > .items {
+.myBtn:hover {
+  cursor: pointer;
   opacity: .5;
 }
 

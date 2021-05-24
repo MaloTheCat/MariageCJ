@@ -14,11 +14,22 @@ class AirtableApiHandler
     request["Cookie"] = "brw=brwbfYTmJqaGnv7ZD"
 
     response = https.request(request)
-    JSON.parse(response.read_body).flatten[1]
+    parsed_response = JSON.parse(response.read_body).flatten[1]
   end
 
   def self.patch_row
-    # get_all_rows
+    # @row = @result.find(params[:id])
+    # valueLine = get_all_rows.find(params[:id])
+    # valueLine.update
+  end
+
+  private
+
+  def value_params
+    # params.require(:patch_row).permit(
+    #   :name,
+    #   :remainingPrice
+    # )
   end
 
 end
