@@ -1,0 +1,5 @@
+<%= form_with method: :post do |value_form| %>
+  <%= value_form.label :price, "Montant" %>
+  <%= value_form.number_field :price %>
+  <%= value_form.submit "Ajouter"%>
+<% end %>

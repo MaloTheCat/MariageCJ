@@ -47,7 +47,7 @@
 <div id="section3">
 
 
-  <ul class="container-grid">
+  <ul id="table" class="container-grid">
     <div class="items" style="background-color: white;">
       <div class="header-grid-1"></div>
       <div class="header-grid-2">
@@ -62,40 +62,25 @@
     </div>
 
     <% @result.each_with_index do |line, index| %>
-
-      <a href="" id="link">
+      <%= render 'shared/modal' %>
+      <div href="" class="myBtn" id="link">
         <% if index.odd? %>
-            <div class="items bck-pink">
-              <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
-              <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
-              <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
-              <li>-</li>
-            </div>
-        <% else %>
-          <!-- <a href="" id=myBtn> -->
-            <div class="items bck-green">
-              <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
-              <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
-              <li><%= "#{line["fields"]["Initial Price"]}€" %></li>
-              <li>-</li>
-            </div>
-        <% end %>
-
-        <!-- Modal -->
-        <!-- <button id="myBtn">Open Modal</button> -->
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <span class="close">&times;</span>
-            <%= form_with method: :get do |form| %>
-              <%= form.label :price, "Montant" %>
-              <%= form.number_field :price %>
-              <%= form.submit "Ajouter", id: "prevent-reloading"%>
-            <% end %>
+          <div class="items bck-pink">
+            <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
+            <li><%= "#{line["fields"]["initialPrice"]}€" %></li>
+            <li><%= "#{line["fields"]["remainingPrice"]}€" %></li>
+            <li><%= @valueSubmited %></li>
           </div>
-        </div>
-        <!-- Modal -->
-        <%# render 'shared/modal' %>
-      </a>
+        <% else %>
+          <div class="items bck-green">
+            <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
+            <li><%= "#{line["fields"]["initialPrice"]}€" %></li>
+            <li><%= "#{line["fields"]["remainingPrice"] #- @valueSubmited
+                } €" %></li>
+            <li><%= @valueSubmited %></li>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </ul>
 </div>
