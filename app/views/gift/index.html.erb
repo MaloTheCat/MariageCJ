@@ -63,9 +63,13 @@
     <% @gifts.each_with_index do |gift, index| %>
       <% if !gift.fields.empty? %>
       <%#= render 'shared/modal', id: gift.fields["id"] %>
+
+        <!-- MODAL -->
         <div id="myModal" class="modal">
           <div class="modal-content">
             <span class="close">&times;</span>
+
+            <!-- FORM -->
             <%= gift.fields["gift"] %>
             <%#= render 'shared/form' %>
             <%= simple_form_for "" do |f| %>
@@ -74,28 +78,31 @@
               <%#= f.input :value, as: :integer %>
               <%= f.button :submit, value: "Participer" %>
             <% end %>
+            <!-- END FORM -->
 
             <input type="number" min="0" max="#{gift.fields['remainingPrice']}" id="content_number_form">
             <button id="validate_form">Click</button>
           </div>
         </div>
+        <!-- END MODAL-->
 
-        <%#= link_to gift_path(gift.fields["id"]) do %>
           <div href="" class="myBtn" id="link">
+            <!-- lignes impaires -->
             <% if index.odd? %>
               <div class="items bck-pink">
                 <li style="padding-left: 20px;"><%= gift["gift"] %></li>
                 <li><%= gift.fields["initialPrice"] %>€</li>
                 <li><%= gift.fields["remainingPrice"] %>€</li>
-                <li><%= @valueSubmited %></li>
-              </div> <!-- lignes impaires -->
+                <li class="value_submited">-</li>
+              </div>
             <% else %>
+              <!-- lignes paires -->
               <div class="items bck-green">
                 <li style="padding-left: 20px;"><%= gift["gift"] %></li>
                 <li><%= gift.fields["initialPrice"] %>€</li>
                 <li><%= gift.fields["remainingPrice"] %>€</li>
-                <li><%= @valueSubmited %></li>
-              </div> <!-- lignes paires -->
+                <li>-<%= @valueSubmited %></li>
+              </div>
             <% end %>
           </div>
         <%# end %>
