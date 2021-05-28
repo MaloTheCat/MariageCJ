@@ -1,5 +1,24 @@
-<%= form_with method: :post do |value_form| %>
-  <%= value_form.label :price, "Montant" %>
-  <%= value_form.number_field :price %>
-  <%= value_form.submit "Ajouter"%>
-<% end %>
+<%#= form_with gift_path method: :post do |value_form| %>
+  <%#= value_form.label :remainingPrice, "Montant" %>
+  <%#= value_form.number_field :remainingPrice %>
+  <%#= value_form.submit "Ajouter"%>
+<%# end %>
+
+
+<!-- Gift.find(id) -->
+<!-- <input type="" name=""> //JS = récupérer -->
+<!-- gift["remainingprice"] -= input -->
+<!-- gift.save -->
+<!-- redirect_to -->
+
+<%= gift.fields["id"] %>
+<input type="" name=""> //JS = récupérer
+gift["remainingprice"] -= input
+gift.save
+redirect_to
+
+
+<%#= simple_form_for(gift_path), remote: true do |value_form| %>
+  <%#= value_form.input :remainingPrice %>
+  <%#= value_form.button value: "Ajouter" %>
+<%# end %>

@@ -14,7 +14,7 @@ class AirtableApiHandler
     request["Cookie"] = "brw=brwbfYTmJqaGnv7ZD"
 
     response = https.request(request)
-    parsed_response = JSON.parse(response.read_body).flatten[1]
+    JSON.parse(response.read_body).flatten[1]
   end
 
   def self.patch_row

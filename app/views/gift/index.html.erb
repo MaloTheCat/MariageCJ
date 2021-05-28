@@ -46,7 +46,6 @@
 </div>
 <div id="section3">
 
-
   <ul id="table" class="container-grid">
     <div class="items" style="background-color: white;">
       <div class="header-grid-1"></div>
@@ -58,33 +57,55 @@
       </div>
       <div class="header-grid-4">
         Votre <strong>Participation</strong>
-      </div>
+      </div> <!-- Table's Head -->
     </div>
 
-    <% @result.each_with_index do |line, index| %>
-      <%= render 'shared/modal' %>
-      <div href="" class="myBtn" id="link">
-        <% if index.odd? %>
-          <div class="items bck-pink">
-            <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
-            <li><%= "#{line["fields"]["initialPrice"]}€" %></li>
-            <li><%= "#{line["fields"]["remainingPrice"]}€" %></li>
-            <li><%= @valueSubmited %></li>
+    <% @gifts.each_with_index do |gift, index| %>
+      <% if !gift.fields.empty? %>
+      <%#= render 'shared/modal', id: gift.fields["id"] %>
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <%= gift.fields["gift"] %>
+            <%#= render 'shared/form' %>
+            <%= simple_form_for "" do |f| %>
+              <%= gift.fields["id"] %>
+              <%= f.input :montant, as: :integer %>
+              <%#= f.input :value, as: :integer %>
+              <%= f.button :submit, value: "Participer" %>
+            <% end %>
+
+            <input type="number" min="0" max="#{gift.fields['remainingPrice']}" id="content_number_form">
+            <button id="validate_form">Click</button>
           </div>
-        <% else %>
-          <div class="items bck-green">
-            <li style="padding-left: 20px;"><%= "#{line["fields"]["gift"]}" %></li>
-            <li><%= "#{line["fields"]["initialPrice"]}€" %></li>
-            <li><%= "#{line["fields"]["remainingPrice"] #- @valueSubmited
-                } €" %></li>
-            <li><%= @valueSubmited %></li>
+        </div>
+
+        <%#= link_to gift_path(gift.fields["id"]) do %>
+          <div href="" class="myBtn" id="link">
+            <% if index.odd? %>
+              <div class="items bck-pink">
+                <li style="padding-left: 20px;"><%= gift["gift"] %></li>
+                <li><%= gift.fields["initialPrice"] %>€</li>
+                <li><%= gift.fields["remainingPrice"] %>€</li>
+                <li><%= @valueSubmited %></li>
+              </div> <!-- lignes impaires -->
+            <% else %>
+              <div class="items bck-green">
+                <li style="padding-left: 20px;"><%= gift["gift"] %></li>
+                <li><%= gift.fields["initialPrice"] %>€</li>
+                <li><%= gift.fields["remainingPrice"] %>€</li>
+                <li><%= @valueSubmited %></li>
+              </div> <!-- lignes paires -->
+            <% end %>
           </div>
-        <% end %>
-      </div>
+        <%# end %>
+      <% end %>
     <% end %>
+
   </ul>
 </div>
 
 <footer>
   <p>Réalisation unique pour la célébration de Cindy & Jérémie // Jonathan V. // 2021</p>
 </footer>
+
